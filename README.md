@@ -1,4 +1,4 @@
-# nodejs
+# node
 Base Image for all nodejs (v12 LTS) apps
 
 ---
