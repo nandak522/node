@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    PYTHONUNBUFFERED=1 \
     TZ=Asia/Kolkata \
     DEBUG_DEPS="curl less lsof strace netcat net-tools" \
     BUILD_DEPS="build-essential" \
