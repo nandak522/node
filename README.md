@@ -6,7 +6,7 @@ Base Image for all nodejs (v12 LTS) apps
 > `<version>` mentioned below is defined in `VERSION.txt` file.
 ```sh
 # base image for nanda/hello-universe
-docker build -t nanda/nodejs:<version> .
+docker build -t nanda/node:<version> .
 ```
 
 ---
@@ -14,5 +14,5 @@ docker build -t nanda/nodejs:<version> .
 > `<version>` mentioned below is defined in `VERSION.txt` file.
 ```sh
 # run base image's container
-docker run --init -it nanda/nodejs:<version>
+docker run --init -it nanda/node:<version>
 ```
