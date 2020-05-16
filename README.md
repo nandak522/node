@@ -14,5 +14,5 @@ docker build -t nanda/node:<version> .
 > `<version>` mentioned below is defined in `VERSION.txt` file.
 ```sh
 # run base image's container
-docker run --init -it nanda/node:<version>
+docker run --init -m 300M --memory-swap 1G -it nanda/node:<version>
 ```

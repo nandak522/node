@@ -26,4 +26,4 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/*
 
 USER ${APP_USER}
-ENTRYPOINT [ "node", "--init", "-m", "300M", "--memory-swap", "1G" ]
+ENTRYPOINT [ "node" ]
