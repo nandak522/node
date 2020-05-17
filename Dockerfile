@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=Asia/Kolkata \
     DEBUG_DEPS="curl less lsof strace netcat net-tools" \
-    BUILD_DEPS="build-essential ca-certificates" \
+    BUILD_DEPS="build-essential" \
     APP_DEPS="nodejs tzdata" \
     NODE_ENV=production \
     APP_USER=appuser
@@ -19,8 +19,8 @@ RUN set -ex \
     && groupmod -g 1000 ${APP_USER} \
     && chown -Rv ${APP_USER}:${APP_USER} /app \
     && apt-get update && apt-get install -y --no-install-recommends ${BUILD_DEPS} ${DEBUG_DEPS} \
-    && curl -L https://deb.nodesource.com/setup_12.x | bash - \
-    && apt-get install -y --no-install-recommends ${APP_DEPS} \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && curl -L https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y --no-install-recommends ${APP_DEPS} \
     && rm -rf /usr/share/doc && rm -rf /usr/share/man \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false ${BUILD_DEPS} \
     && apt-get autoremove -y \
